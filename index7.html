@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="item,index in items" :key="index">
+                    {{index}} : {{ item.message }}
+                </li>
+            </ul>
+            <ul>
+                <li v-for="value, key in object" :key="key">
+                    {{key}} : {{ value }}
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            let vm = new Vue({
+                el: '#app',
+                data: {
+                    items: [
+                        {message: 'Foo'},
+                        {message: 'Bar'}
+                    ],
+                    object: {
+                        title: 'Now to do lists in vue',
+                        author: 'Jane Doe',
+                        publishedAt: '2016-04-10'
+                    }
+                }
+            });
+        </script>
+        <style type="text/css">
+
+        </style>
+    </body>
+</html>
